@@ -11,7 +11,7 @@ class VTKConan(ConanFile):
     SHORT_VERSION = short_version
     generators = "cmake"
     settings = "os", "compiler", "build_type", "arch"
-    url = ""
+    url = "https://github.com/zyq759316417/conan-vtk"
     options = {
         "shared": [True, False], 
         "qt": [True, False], 
@@ -158,15 +158,18 @@ class VTKConan(ConanFile):
             "vtkFiltersModeling-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersParallel-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersParallelImaging-%s" % self.short_version + LIB_POSTFIX,
+            "vtkFiltersPoints-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersProgrammable-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersSelection-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersSMP-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersSources-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersStatistics-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersTexture-%s" % self.short_version + LIB_POSTFIX,
+            "vtkFiltersTopology-%s" % self.short_version + LIB_POSTFIX,
             "vtkFiltersVerdict-%s" % self.short_version + LIB_POSTFIX,
             "vtkfreetype-%s" % self.short_version + LIB_POSTFIX,
             "vtkGeovisCore-%s" % self.short_version + LIB_POSTFIX,
+            "vtkgl2ps-%s" % self.short_version + LIB_POSTFIX,
             "vtkglew-%s" % self.short_version + LIB_POSTFIX,
             "vtkhdf5_hl-%s" % self.short_version + LIB_POSTFIX,
             "vtkhdf5-%s" % self.short_version + LIB_POSTFIX,
@@ -190,6 +193,7 @@ class VTKConan(ConanFile):
             "vtkIOEnSight-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOExodus-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOExport-%s" % self.short_version + LIB_POSTFIX,
+            "vtkIOExportOpenGL2-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOGeometry-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOImage-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOImport-%s" % self.short_version + LIB_POSTFIX,
@@ -203,15 +207,18 @@ class VTKConan(ConanFile):
             "vtkIOParallelXML-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOPLY-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOSQL-%s" % self.short_version + LIB_POSTFIX,
+            "vtkIOTecplotTable-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOVideo-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOXML-%s" % self.short_version + LIB_POSTFIX,
             "vtkIOXMLParser-%s" % self.short_version + LIB_POSTFIX,
             "vtkjpeg-%s" % self.short_version + LIB_POSTFIX,
             "vtkjsoncpp-%s" % self.short_version + LIB_POSTFIX,
+            "vtklibharu-%s" % self.short_version + LIB_POSTFIX,
             "vtklibxml2-%s" % self.short_version + LIB_POSTFIX,
+            "vtklz4-%s" % self.short_version + LIB_POSTFIX,
             "vtkmetaio-%s" % self.short_version + LIB_POSTFIX,
-            "vtknetcdf_c++" + LIB_POSTFIX,
             "vtkNetCDF-%s" % self.short_version + LIB_POSTFIX,
+            "vtknetcdf_c++" + LIB_POSTFIX,
             "vtkoggtheora-%s" % self.short_version + LIB_POSTFIX,
             "vtkParallelCore-%s" % self.short_version + LIB_POSTFIX,
             "vtkpng-%s" % self.short_version + LIB_POSTFIX,
@@ -221,6 +228,7 @@ class VTKConan(ConanFile):
             "vtkRenderingContextOpenGL2-%s" % self.short_version + LIB_POSTFIX,
             "vtkRenderingCore-%s" % self.short_version + LIB_POSTFIX,
             "vtkRenderingFreeType-%s" % self.short_version + LIB_POSTFIX,
+            "vtkRenderingGL2PSOpenGL2-%s" % self.short_version + LIB_POSTFIX,
             "vtkRenderingImage-%s" % self.short_version + LIB_POSTFIX,
             "vtkRenderingLabel-%s" % self.short_version + LIB_POSTFIX,
             "vtkRenderingLOD-%s" % self.short_version + LIB_POSTFIX,
@@ -235,10 +243,6 @@ class VTKConan(ConanFile):
             "vtkViewsCore-%s" % self.short_version + LIB_POSTFIX,
             "vtkViewsInfovis-%s" % self.short_version + LIB_POSTFIX,
             "vtkzlib-%s" % self.short_version + LIB_POSTFIX,
-            "vtklz4-%s" % self.short_version + LIB_POSTFIX,
-            "vtkRenderingGL2PSOpenGL2-%s" % self.short_version + LIB_POSTFIX,
-            "vtklibharu-%s" % self.short_version + LIB_POSTFIX,
-            "vtkgl2ps-%s" % self.short_version + LIB_POSTFIX
         ]
         if self.options.qt:
             libs.append("vtkGUISupportQt-%s" % self.short_version + LIB_POSTFIX)
