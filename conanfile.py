@@ -51,7 +51,7 @@ class VTKConan(ConanFile):
                 "mesa-utils-extra",
                 "libgl1-mesa-dev",
                 "libglapi-mesa"]
-            print("names: " + str(pack_names))
+            # print("names: " + str(pack_names))
 
             if self.settings.arch == "x86":
                 full_pack_names = []
@@ -67,7 +67,7 @@ class VTKConan(ConanFile):
             if not installer.installed(pkg):
                 to_be_installed += " " + pkg
         if to_be_installed:
-            print("pkg will be installed: " + to_be_installed)
+            # print("pkg will be installed: " + to_be_installed)
             installer.install(to_be_installed)
 
     def config_options(self):
